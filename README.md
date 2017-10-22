@@ -40,7 +40,7 @@
 **Continous Integration**
 
 - [Hudson](ci/hudson.md)
-- Jenkins
+- [Jenkins](ci/jenkins/jenkins.md)
 
 ## CodeCheck
 
