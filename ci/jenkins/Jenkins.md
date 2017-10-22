@@ -10,6 +10,6 @@
 
 ## REF
 
-- [jenkins-ci](http://jenkins-ci.org/)
+- [jenkins-ci](http://jenkins-ci.org/Jenkins.md)
 - [Jenkins+Best+Practices](https://wiki.jenkins.io/display/JENKINS/Jenkins+Best+Practices)
-- [ci.jenkins-ci](https://ci.jenkins-ci.org/)
+- [ci.jenkins-ci](https://ci.jenkins-ci.org/Jenkins.md)

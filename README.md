@@ -1,18 +1,28 @@
-# dev-tool-study
+# tools-study
 
-- [SCM](#scm)
-- [IDE](#ide)
-- [Build](#build)
-- [Repository](#repository)
-- [CI](#ci)
-- [CodeCheck](#codecheck)
-- [Monitor](#monitor)
+- Management Tools
+  - [SCM](#scm)
+  - [Collaboration](#collaboration)
+- Development Tools
+  - [IDE](#ide)
+  - [Build](#build)
+  - [Repository](#repository)
+  - [CI](#ci)
+  - [CodeCheck](#codecheck)
+- Monitor Tools
+  - [Application Monitor](#application_monitor)
+  - [System Monitor](#system_monitor)
 
 ## SCM
 **Software Configuration Management**
 
 - Subversion
 - Git
+
+## Collaboration
+
+- JIRA
+- Redmine
 
 ## IDE
 **Integrated Development Environment**
@@ -25,7 +35,7 @@
 ## Build
 
 - ~~Ant~~
-- [Apache Maven](build/maven/maven.md)
+- [Apache Maven](build/maven/Maven.md)
 - Gulp
 
 ## Repository
@@ -39,8 +49,8 @@
 ## CI
 **Continous Integration**
 
-- [Hudson](ci/hudson.md)
-- [Jenkins](ci/jenkins/jenkins.md)
+- [Hudson](ci/Hudson.md)
+- [Jenkins](ci/jenkins/Jenkins.md)
 
 ## CodeCheck
 
@@ -48,14 +58,14 @@
 - Findbugs: 静态检查
 - SonarQube
 
-## Monitor
-**Application Monitor**
+## Application_Monitor
 
 - dubbo
   - dubbo-monitor
   - dubbo-admin
+- [Elastic Stack](https://github.com/shawn0915/linux-study/blob/master/devOps/elk/README.md)
 
+## System_Monitor
 
-# todo
+- Zabbix
 
-- MyBatisGenerator

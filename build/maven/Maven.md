@@ -15,19 +15,19 @@ Maven是跨平台的项目管理工具。主要服务于基于Java平台的项�
 ## Maven Core Concept
 
 - [POM(Project Object Model)](config/pom_demo.xml)
-- [Location](concept/location.md)
-- [Dependency](concept/dependency.md)
-- [Repository](concept/repository.md)
-- [Lifecycle](concept/lifecycle.md)
-- [Plugin](concept/plugin.md)
-- [聚合与继承](concept/moudle.md)
+- [Location](concept/Location.md)
+- [Dependency](concept/Dependency.md)
+- [Repository](concept/Repository.md)
+- [Lifecycle](concept/Lifecycle.md)
+- [Plugin](concept/Plugin.md)
+- [聚合与继承](concept/Moudle.md)
 
 ## Common Usage
 
-- [Install](usage/install.md)
-- [Deploy](usage/deploy.md)
-- [Command](usage/command.md)
-- [Settings](usage/settings.md)
+- [Install](usage/Install.md)
+- [Deploy](usage/Deploy.md)
+- [Command](usage/Command.md)
+- [Settings](usage/Settings.md)
 - ~~m2eclipse~~
 
 ## Convention Over Configuration
@@ -45,7 +45,7 @@ pom.xml
 
 ## Ref
 
-- [maven.apache.org](http://maven.apache.org/)
+- [maven.apache.org](http://maven.apache.org/Maven.md)
 - [Binary Repository Manager Feature Matrix](https://binary-repositories-comparison.github.io/)
 - [introduction-to-the-lifecycle](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
 
