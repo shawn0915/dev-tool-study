@@ -1,11 +1,21 @@
 # dev-tool-study
 
+- [SCM](#scm)
+- [IDE](#ide)
+- [Build](#build)
+- [Repository](#repository)
+- [CI](#ci)
+- [CodeCheck](#codecheck)
+- [Monitor](#monitor)
+
 ## SCM
+**Software Configuration Management**
 
 - Subversion
 - Git
 
 ## IDE
+**Integrated Development Environment**
 
 - Eclipse IDE
 - [JetBrains](https://www.jetbrains.com/)
@@ -27,17 +37,19 @@
   - Sonatype Nexus 3
 
 ## CI
+**Continous Integration**
 
 - [Hudson](ci/hudson.md)
 - Jenkins
 
-## Code Check
+## CodeCheck
 
 - Checkstyle: 格式检查
 - Findbugs: 静态检查
 - SonarQube
 
-## Monitor(Application)
+## Monitor
+**Application Monitor**
 
 - dubbo
   - dubbo-monitor

@@ -1,5 +1,15 @@
 # Jenkins
 
+## Env
+
+`JENKINS_HOME`
+
+## Plugin
+
+- [Publish+Over+SSH+Plugin](https://wiki.jenkins.io/display/JENKINS/Publish+Over+SSH+Plugin)
+
 ## REF
 
-http://jenkins-ci.org/
+- [jenkins-ci](http://jenkins-ci.org/)
+- [Jenkins+Best+Practices](https://wiki.jenkins.io/display/JENKINS/Jenkins+Best+Practices)
+- [ci.jenkins-ci](https://ci.jenkins-ci.org/)
