@@ -14,15 +14,18 @@
   - [System Monitor](#system_monitor)
 
 ## SCM
-**Software Configuration Management**
+**Source Code Management**
 
 - Subversion
 - Git
 
 ## Collaboration
 
-- JIRA
-- Redmine
+- [Atlassian JIRA](https://www.atlassian.com/software/jira)
+- ~~Trac Lighting~~
+- [Redmine](collaboration/redmine/Redmine.md)
+- [Leangoo](https://www.leangoo.com/)
+- Bugzilla
 
 ## IDE
 **Integrated Development Environment**
