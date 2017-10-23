@@ -7,6 +7,7 @@
   - [SCM](#scm)
   - [Collaboration](#collaboration)
 - Development Tools
+  - [Kit](#kit)
   - [IDE](#ide)
   - [Build](#build)
     - [Decompile](#decompile)
@@ -31,6 +32,10 @@
 - [Leangoo](https://www.leangoo.com/)
 - Bugzilla
 
+## Kit
+
+- [JDK](kit/JDK.md)
+
 ## IDE
 **Integrated Development Environment**
 
@@ -47,7 +52,7 @@
 
 ### Decompile
 
-- jd-gui
+- [Java Decompiler](http://jd.benow.ca/)
 - luyten
 
 ## Repository
