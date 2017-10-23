@@ -1,5 +1,8 @@
 # tools-study
 
+[![License](svg/license-MIT-blue.svg)](LICENSE)
+
+
 - Management Tools
   - [SCM](#scm)
   - [Collaboration](#collaboration)
@@ -22,7 +25,7 @@
 ## Collaboration
 
 - [Atlassian JIRA](https://www.atlassian.com/software/jira)
-- ~~Trac Lighting~~
+- [~~Trac Lighting~~](https://trac.edgewall.org/)
 - [Redmine](collaboration/redmine/Redmine.md)
 - [Leangoo](https://www.leangoo.com/)
 - Bugzilla

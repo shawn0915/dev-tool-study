@@ -1,6 +1,6 @@
 # Apache Maven
 
-[![Maven](https://img.shields.io/badge/Maven-3.3.9-brightgreen.svg)]()
+[![Maven](../../svg/Maven-3.3.9-brightgreen.svg)]()
 
 
 Maven是跨平台的项目管理工具。主要服务于基于Java平台的项目构建，依赖管理和项目信息管理。
@@ -19,7 +19,7 @@ Maven是跨平台的项目管理工具。主要服务于基于Java平台的项�
 - [Dependency](concept/Dependency.md)
 - [Repository](concept/Repository.md)
 - [Lifecycle](concept/Lifecycle.md)
-- [Plugin](concept/Plugin.md)
+- [Plugin](plugins/Plugin.md)
 - [聚合与继承](concept/Moudle.md)
 
 ## Common Usage
