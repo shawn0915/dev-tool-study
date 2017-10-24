@@ -1,0 +1,53 @@
+Configuration:
+
+  Detected OS:           linux-gnu
+  Install path:          /home/admin/local/zabbix
+  Compilation arch:      linux
+
+  Compiler:              gcc
+  Compiler flags:        -g -O2  -I/usr/include/libxml2   -I/usr/local/include -I/usr/lib64/perl5/CORE -I. -I/usr/include -I/usr/include -I/usr/include -I/usr/include -I/usr/include  
+
+  Enable server:         yes
+  Server details:
+    With database:         MySQL
+    WEB Monitoring:        cURL
+    Native Jabber:         no
+    SNMP:                  yes
+    IPMI:                  yes
+    SSH:                   yes
+    TLS:                   OpenSSL
+    ODBC:                  no
+    Linker flags:          -rdynamic      -L/usr/lib64/mysql        -L/usr/lib64 -L/usr/lib -L/usr/lib -L/usr/lib -L/usr/lib 
+    Libraries:             -lm -ldl  -lresolv    -lmysqlclient      -lxml2    -lnetsnmp -lssh2 -lOpenIPMI -lOpenIPMIposix -lssl -lcrypto -lldap -llber   -lcurl
+
+  Enable proxy:          yes
+  Proxy details:
+    With database:         MySQL
+    WEB Monitoring:        cURL
+    SNMP:                  yes
+    IPMI:                  yes
+    SSH:                   yes
+    TLS:                   OpenSSL
+    ODBC:                  no
+    Linker flags:          -rdynamic      -L/usr/lib64/mysql       -L/usr/lib64 -L/usr/lib -L/usr/lib -L/usr/lib -L/usr/lib 
+    Libraries:             -lm -ldl  -lresolv    -lmysqlclient     -lxml2    -lnetsnmp -lssh2 -lOpenIPMI -lOpenIPMIposix -lssl -lcrypto -lldap -llber   -lcurl
+
+  Enable agent:          yes
+  Agent details:
+    TLS:                   OpenSSL
+    Linker flags:          -rdynamic    -L/usr/lib -L/usr/lib 
+    Libraries:             -lm -ldl  -lresolv   -lssl -lcrypto -lldap -llber   -lcurl
+
+  Enable Java gateway:   no
+
+  LDAP support:          yes
+  IPv6 support:          yes
+
+***********************************************************
+*            Now run 'make install'                       *
+*                                                         *
+*            Thank you for using Zabbix!                  *
+*              <http://www.zabbix.com>                    *
+***********************************************************
+
+[admin@172 zabbix-3.0.1]$

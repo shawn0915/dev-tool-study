@@ -1,0 +1,109 @@
+
+
+
+// 编辑 zabbix_server 配置文件
+$ cd /opt/local/zabbix/etc/
+$ cp zabbix_server.conf zabbix_server.conf.org
+$ vim zabbix_server.conf
+
+// 12
+ListenPort=10051
+// 38
+LogFile=/data/zabbix/zabbix_server.log
+// 68
+PidFile=/data/zabbix/zabbix_server.pid
+// 77
+DBHost=zabbix.mysql.shawnyan.com
+// 87
+DBName=zabbix
+// 103
+DBUser=zabbix
+// 111
+DBPassword=zabbix
+// 126
+DBPort=3306
+// 281
+SNMPTrapperFile=/data/zabbix/zabbix_traps.tmp
+// 344
+CacheSize=512M
+// 447
+#AlertScriptsPath=/home/admin/data/zabbix/alertscripts
+// 455
+#ExternalScripts=/home/admin/data/zabbix/externalscripts
+// 463
+FpingLocation=/opt/local/fping
+// 491
+#LogSlowQueries=10000
+// 555
+#Include=/opt/local/zabbix/zabbix_server.conf.d/
+#Include=/opt/local/zabbix/zabbix_server.conf.d/*.conf
+
+#mkdir -pv /data/zabbix/{alertscripts,externalscripts} /opt/local/zabbix/zabbix_server.conf.d
+
+
+// 编辑zabbix_agent配置文件
+cd /home/admin/local/zabbix/etc/
+cp zabbix_agentd.conf zabbix_agentd.conf.org
+vim zabbix_agentd.conf
+
+// 11
+PidFile=/var/run/zabbix/zabbix_agentd.pid
+// 30
+LogFile=/var/log/zabbix/zabbix_agentd.log
+// 91
+Server=zabbix.shawnyan.com
+// 132
+ServerActive=zabbix.shawnyan.com
+// 143
+#Hostname=Zabbix server
+// 263
+#Include=/home/admin/local/zabbix/zabbix_agentd.conf.d/*.conf
+
+#mkdir -pv /home/admin/local/zabbix/zabbix_agentd.conf.d
+
+
+
+
+mkdir -pv /home/admin/local/apache2/htdocs/zabbix
+cp -ra zabbix-3.0.4/frontends/php/* /home/admin/local/apache2/htdocs/zabbix
+
+
+
+修改前端页面的数据库连接配置
+$ cd /home/admin/local/apache2/htdocs/zabbix/conf
+$ cp zabbix.conf.php.example zabbix.conf.php
+$ vi zabbix.conf.php
+
+...
+<?php
+// Zabbix GUI configuration file.
+global $DB;
+
+$DB['TYPE']                             = 'MYSQL';
+$DB['SERVER']                   = '10.161.31.219';
+$DB['PORT']                             = '3406';
+$DB['DATABASE']                 = 'zabbix';
+$DB['USER']                             = 'zabbix';
+$DB['PASSWORD']                 = '';
+// Schema name. Used for IBM DB2 and PostgreSQL.
+$DB['SCHEMA']                   = '';
+
+$ZBX_SERVER                             = 'localhost';
+$ZBX_SERVER_PORT                = '10051';
+$ZBX_SERVER_NAME                = '';
+
+$IMAGE_FORMAT_DEFAULT   = IMAGE_FORMAT_PNG;
+?>
+...
+
+
+// 启动 zabbix_server 服务
+cd zabbix/sbin
+./zabbix_server
+
+
+// zabbix web安装
+访问web界面 
+http://172.16.63.246:18080/zabbix
+
+

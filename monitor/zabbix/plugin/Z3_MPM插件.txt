@@ -1,0 +1,118 @@
+MPM(Performance Monitor for MySQL)
+1.MPM下载及其依赖安装
+1.1.通过CPAN安装MPM依赖的相关Perl模块
+#yum install cpan
+#perl -MCPAN -e shell
+// cpan> install File::which
+cpan> install Bundle::LWP
+cpan> install Digest::SHA1
+cpan> install DBI
+cpan> install DBD::mysql
+cpan> install Time::HiRes
+cpan> install Crypt::SSLeay
+
+1.2.通过yum安装MPM依赖的相关Perl模块
+#yum install perl-File-Which
+#yum install perl-libwww-perl
+#yum install perl-Digest-SHA1
+#yum install perl-DBD-MySQL
+#yum install perl-Time-HiRes
+#yum install perl-Crypt-SSLeay
+
+1.3.通过tar包安装MPM依赖的相关Perl模块
+# yum install perl-ExtUtils-CBuilder
+
+
+2.Zabbix Web端导入MPM模板
+Configuration-->Templates
+...
+Template_FromDual.MySQL.mpm.xml (监控mpm agent本身,这个必须导入)
+Template_FromDual.MySQL.server.xml (监控Linux系统跟数据库使用相关的附加项)
+Template_FromDual.MySQL.process.xml (监控各种Linux进程[比如:mysqld,ndbd])
+Template_FromDual.MySQL.mysql.xml (监控MySQL常用状态变量)
+Template_FromDual.MySQL.innodb.xml (监控InnoDB存储引擎状态变量)
+Template_FromDual.MySQL.myisam.xml (监控MyISAM存储引擎状态变量)
+Template_FromDual.MySQL.master.xml (监控MySQL主从复制的Master状态)
+Template_FromDual.MySQL.slave.xml (监控MySQL主从复制的Slave状态)
+Template_FromDual.MySQL.ndb.xml (监控MySQL Cluster)
+Template_FromDual.MySQL.galera.xml (监控MySQL Galera Cluster)
+Template_FromDual.MySQL.pbxt.xml (监控PBXT存储引擎状态变量)
+Template_FromDual.MySQL.aria.xml (监控Aria存储引擎的状态变量)
+Template_FromDual.MySQL.drbd.xml (监控DRBD设备状态信息)
+...
+
+
+
+3.安装MPM并配置MPM Agent的Zabbix Keys，以实现Zabbix挂载MPM
+3.1.安装MPM Agent
+#tar zxvf mysql_performance_monitor_agent-0.9.1.tar.gz
+#mv mysql_performance_monitor_agent-0.9.1 /usr/local/mysql_performance_monitor_agent
+#cd /usr/local/mysql_performance_monitor_agent/
+#sed -i "s|/usr/local/bin/|/usr/local/zabbix/bin/|g" FromDualMySQLagent.pl
+
+3.2.将MPM Agent的Keys信息加入到zabbix_agentd的配置目录中
+#cd /usr/local/zabbix/etc/zabbix_agentd.conf.d/
+#vi FromDual_MySQL_monitoring.conf
+#cat FromDual_MySQL_monitoring.conf
+UserParameter=FromDual.MySQL.check,/usr/local/mysql_performance_monitor_agent/FromDualMySQLagent.pl /usr/local/mysql_performance_monitor_agent/etc/FromDualMySQLagent.conf
+
+4.MPM Agent配置
+4.1.创建MPM的MySQL监控用户
+mysql> create user 'mpm'@'127.0.0.1' identified by '123456';
+mysql> grant process, replication client on *.* to 'mpm'@'127.0.0.1';
+mysql> flush privileges;
+
+4.2.配置MPM Agent
+# cd /usr/local/mysql_performance_monitor_agent/etc
+# cp FromDualMySQLagent.conf.template FromDualMySQLagent.conf
+# mkdir -p /var/log/zabbix/
+# mkdir -p /var/log/zabbix/cache
+# touch /var/log/zabbix/FromDualMySQLagent.log
+# chown -R zabbix:zabbix /var/log/zabbix
+# chmod o+r /var/log/mysql/zabbix_server_mysqld.pid
+# vi FromDualMySQLagent.conf
+...
+[zabbix_server_mysqld]          # This MUST match Hostname in Zabbix!
+
+Type         = mysqld
+
+MysqlPort    = 3306
+Modules      = process mysql myisam innodb slave
+PidFile      = /var/log/mysql/zabbix_server_mysqld.pid
+Debug        = 1
+...
+# vi FromDualMySQLagent.pl
+...
+# This is needed to find zabbix_sender!
+$ENV{PATH} .= $ENV{PATH} . ':/usr/local/zabbix/bin';
+
+...
+
+
+4.3.检查MPM插件工作状况
+# /usr/local/mysql_performance_monitor_agent/FromDualMySQLagent.pl /usr/local/mysql_performance_monitor_agent/etc/FromDualMySQLagent.conf
+输出“1”，代表插件工作正常
+
+
+4.4.检查zabbix_agentd情况
+# /usr/local/zabbix/sbin/zabbix_agentd -c /usr/local/zabbix/etc/zabbix_agentd.conf -t FromDual.MySQL.check
+正常情况：FromDual.MySQL.check                          [t|1]  
+
+4.4.重启Zabbix Agent，载入MPM模块
+service zabbix_agentd restart
+
+5.Q&A
+5.1.检查MPM插件工作状况时异常
+# /usr/local/mysql_performance_monitor_agent/FromDualMySQLagent.pl /usr/local/mysql_performance_monitor_agent/etc/FromDualMySQLagent.conf
+输出“1”，代表插件工作正常
+Use of uninitialized value $pid in scalar chomp at /usr/local/mysql_performance_monitor_agent/lib/FromDualMySQLprocess.pm line 37.
+Use of uninitialized value $pid in numeric eq (==) at /usr/local/mysql_performance_monitor_agent/lib/FromDualMySQLprocess.pm line 277.
+Use of uninitialized value $pid in concatenation (.) or string at /usr/local/mysql_performance_monitor_agent/lib/FromDualMySQLprocess.pm line 279.
+1
+
+5.2.检查zabbix_agentd情况时异常
+# /usr/local/zabbix/sbin/zabbix_agentd -c /usr/local/zabbix/etc/zabbix_agentd.conf -t FromDual.MySQL.check
+FromDual.MySQL.check                          [t|Use of uninitialized value $pid in scalar chomp at /usr/local/mysql_performance_monitor_agent/lib/FromDualMySQLprocess.pm line 37.
+Use of uninitialized value $pid in numeric eq (==) at /usr/local/mysql_performance_monitor_agent/lib/FromDualMySQLprocess.pm line 277.
+Use of uninitialized value $pid in concatenation (.) or string at /usr/local/mysql_performance_monitor_agent/lib/FromDualMySQLprocess.pm line 279.
+1]
