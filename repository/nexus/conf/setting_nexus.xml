@@ -1,0 +1,54 @@
+<settings>
+	<mirrors>
+		<mirror>
+			<!--此处配置所有的构建均从私有仓库中下载 *代表所有，也可以写central -->
+			<!-- unique id -->
+			<id>nexus</id>
+			<mirrorOf>*</mirrorOf>
+			<!-- <name>Human Readable Name for this Mirror.</name> -->
+			<url>http://localhost:8083/nexus/content/groups/public</url>
+		</mirror>
+	</mirrors>
+
+	<profiles>
+		<profile>
+			<id>nexus</id>
+			<!-- 所有请求均通过私服 -->
+			<repositories>
+				<repository>
+					<id>central</id>
+					<url>http://localhost:8083/nexus/content/groups/public</url>
+					<releases><enabled>true</enabled></releases>
+					<snapshots><enabled>true</enabled></snapshots>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>central</id>
+					<url>http://localhost:8083/nexus/content/groups/public</url>
+					<releases><enabled>true</enabled></releases>
+					<snapshots><enabled>true</enabled></snapshots>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+	</profiles>
+
+	<activeProfiles>
+		<!-- make the profile active all the time -->
+		<activeProfile>nexus</activeProfile>
+	</activeProfiles>
+
+	<!-- 设置发布时的用户名 -->
+	<servers>
+		<server>
+			<id>releases</id>
+			<username>deployment</username>
+			<password>deployment</password>
+		</server>
+		<server>
+			<id>snapshots</id>
+			<username>deployment</username>
+			<password>deployment</password>
+		</server>
+	</servers>
+</settings>
