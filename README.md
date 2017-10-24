@@ -3,6 +3,8 @@
 [![License](svg/license-MIT-blue.svg)](LICENSE)
 
 
+## Category
+
 - Management Tools
   - [SCM](#scm)
   - [Collaboration](#collaboration)
@@ -15,14 +17,16 @@
   - [CI](#ci)
   - [CodeCheck](#codecheck)
 - Monitor Tools
-  - [Application Monitor](#application_monitor)
   - [System Monitor](#system_monitor)
+  - [Application Monitor](#application_monitor)
+
 
 ## SCM
 **Source Code Management**
 
 - Subversion
 - Git
+
 
 ## Collaboration
 
@@ -32,9 +36,11 @@
 - [Leangoo](https://www.leangoo.com/)
 - Bugzilla
 
+
 ## Kit
 
 - [JDK](kit/JDK.md)
+
 
 ## IDE
 **Integrated Development Environment**
@@ -44,24 +50,29 @@
   - IntelliJ IDEA
 - Netbeans IDE
 
+
 ## Build
 
 - ~~Ant~~
 - [Apache Maven](build/maven/Maven.md)
 - Gulp
 
+
 ### Decompile
 
 - [Java Decompiler](http://jd.benow.ca/)
 - luyten
 
+
 ## Repository
 
 - Git Repository
   - [GitHub](https://github.com/shawn0915)
-  - GitLab
-- Maven Central Repository
-  - Nexus Repository Manager OSS 3.x
+  - [GitLab](repository/gitlab/GitLab.md)
+- Maven Repository
+  - [Maven Central Repository](http://mvnrepository.com/repos/central)
+  - [Nexus Repository Manager OSS 3.x](repository/nexus/Nexus.md)
+
 
 ## CI
 **Continous Integration**
@@ -69,11 +80,17 @@
 - [Hudson](ci/Hudson.md)
 - [Jenkins](ci/jenkins/Jenkins.md)
 
+
 ## CodeCheck
 
 - Checkstyle: 格式检查
 - Findbugs: 静态检查
 - SonarQube
+
+## System_Monitor
+
+- Zabbix
+
 
 ## Application_Monitor
 
@@ -81,8 +98,4 @@
   - dubbo-monitor
   - dubbo-admin
 - [Elastic Stack](https://github.com/shawn0915/linux-study/blob/master/devOps/elk/README.md)
-
-## System_Monitor
-
-- Zabbix
 
