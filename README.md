@@ -5,24 +5,34 @@
 
 ## Category
 
-- Management
+- [Management](#management)
+  - [Efficiency](#efficiency)
   - [SCM](#scm)
   - [Collaboration](#collaboration)
   - [Repository](#repository)
-- Development
+- [Development](#development)
   - [Kit](#kit)
   - [IDE](#ide)
   - [Build](#build)
   - [Decompile](#decompile)
   - [CI](#ci)
-- Testing
+- [Testing](#testing)
   - [CodeCheck](#codecheck)
   - [Performance Testing](#performancetesting)
 - [Monitor](monitor/Monitor.md)
-  - [System Monitor](#system_monitor)
-  - [Application Monitor](#application_monitor)
+  - [System Monitor](#systemmonitor)
+  - [Application Monitor](#applicationmonitor)
 
 ## Management
+
+### Efficiency
+
+- UltraEdit
+- Notepad++
+- EditPlus
+- Evernote
+- note.youdao
+- XMind
 
 ### SCM
 **Source Code Management**
@@ -82,14 +92,17 @@
 
 ### CodeCheck
 
-- Checkstyle: 格式检查
-- Findbugs: 静态检查
-- SonarQube
+- Checkstyle
+- Findbugs
+- [SonarQube](testing/SonarQube.md)
 
 ### PerformanceTesting
 
-- JMeter
-- LoadRunner
+- Application
+  - JMeter
+  - LoadRunner
+- Network
+  - [Netperf](testing/Netperf.md)
 
 ## Monitor
 
