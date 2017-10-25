@@ -76,13 +76,12 @@
 
 ### Build
 
-- ~~Ant~~
+- [~~Apache Ant~~](https://ant.apache.org/)
 - [Apache Maven](build/maven/Maven.md)
-- Gulp
 
 ### Decompile
 
-- [Java Decompiler](http://jd.benow.ca/)
+- [Java Decompiler (jd)](http://jd.benow.ca/)
 - luyten
 
 ### CI
@@ -90,6 +89,7 @@
 
 - [Hudson](ci/Hudson.md)
 - [Jenkins](ci/jenkins/Jenkins.md)
+- [Travis CI](https://travis-ci.org/)
 
 ## Testing
 
