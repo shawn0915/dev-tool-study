@@ -55,6 +55,7 @@
   - [GitHub](https://github.com/shawn0915)
   - [GitLab](repository/gitlab/GitLab.md)
   - [GitStack](https://gitstack.com/)
+  - [coding.net](https://coding.net)
 - Maven Repository
   - [Maven Central Repository](http://mvnrepository.com/repos/central)
   - [Nexus Repository Manager OSS 3.x](repository/nexus/Nexus.md)
@@ -104,6 +105,7 @@
   - JMeter
   - LoadRunner
 - Network
+  - [Nmap](testing/Nmap.md)
   - [Netperf](testing/Netperf.md)
 
 ## Monitor

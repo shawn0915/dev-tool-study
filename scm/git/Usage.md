@@ -41,6 +41,14 @@ git config --global http.sslVerify false
 git clone https://github.com/shawn0915/Project
 ```
 
+git 代码库迁移
+
+```bash
+git clone --bare https://github.com/shawn0915/gitrepo.git
+cd gitrepo.git
+git push --mirror https://github.com/shawn0915/gitrepo_new.git
+```
+
 ## status
 
 ```bash
