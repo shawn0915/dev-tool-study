@@ -1,5 +1,11 @@
 # GitLab
 
+
+## Install
+
+- [install-gitlab](install-gitlab.sh)
+
+
 ## REF
 
 - [GitLab.com](https://about.gitlab.com/)

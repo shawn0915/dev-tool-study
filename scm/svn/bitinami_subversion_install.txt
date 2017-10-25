@@ -1,0 +1,100 @@
+
+**wiki**
+https://wiki.bitnami.com/Components/Subversion
+
+**install**
+$ chmod +x bitnami-subversion-1.8.16-0-linux-x64-installer.run
+$ ./bitnami-subversion-1.8.16-0-linux-x64-installer.run
+
+**conf**
+
+***auth***
+$ cd /data/subversion-1.8.16-0/repository/conf
+$ vi svnserve.conf
+// line:19
+anon-access = read
+auth-access = write
+// line:27
+password-db = passwd
+
+$ vi passwd
+[users]
+# harry = harryssecret
+# sally = sallyssecret
+admin = admin
+
+***restart***
+$ cd /data/subversion-1.8.16-0
+$ ./ctlscript.sh restart subversion
+/data/subversion-1.8.16-0/subversion/scripts/ctl.sh : subversion stopped
+/data/subversion-1.8.16-0/subversion/scripts/ctl.sh : subversion started at port 3690
+
+
+**创建仓库**
+$ mkdir ~/svnrepository
+$ ./svnadmin create ~/svnrepository/repo-test
+
+$ svnadmin create shawnyan_data
+
+
+*apache*
+$ cd /data/subversion-1.8.16-0/apache2/conf
+
+**httpd**
+$ vi httpd.conf
+
+LoadModule dav_module modules/mod_dav.so
+LoadModule dav_fs_module modules/mod_dav_fs.so
+LoadModule dav_svn_module modules/mod_dav_svn.so
+LoadModule authz_svn_module modules/mod_authz_svn.so
+
+// line:537
+<Location /subversion>
+ DAV svn
+ SVNPath "/data/subversion-1.8.16-0/repository"
+ AuthType Basic
+ AuthName "Subversion repository"
+ AuthUserFile /data/subversion-1.8.16-0/repository/users
+ require valid-user
+</Location>
+
+<Location /shawnyan>
+ DAV svn
+ SVNPath "/data/subversion-1.8.16-0/svnrepository/shawnyan"
+ AuthType Basic
+ AuthName "Subversion repository"
+ AuthUserFile /data/subversion-1.8.16-0/svnrepository/shawnyan/users
+ require valid-user
+</Location>
+
+<Location /shawnyan_data>
+ DAV svn
+ SVNPath "/data/subversion-1.8.16-0/svnrepository/shawnyan_data"
+ AuthType Basic
+ AuthName "Subversion repository"
+ AuthUserFile /data/subversion-1.8.16-0/svnrepository/shawnyan_data/users
+ 目录权限文件
+ AuthzSVNAccessFile /data/subversion-1.8.16-0/svnrepository/shawnyan_data/conf/authz
+ require valid-user
+</Location>
+
+
+新建用户
+$ cd /data/subversion-1.8.16-0
+$ ./apache2/bin/htpasswd -c repository/users shawnyan
+
+$ ./apache2/bin/htpasswd -c svnrepository/shawnyan_data/users sundy
+
+./apache2/bin/htpasswd svnrepository/shawnyan_data/users shawnyan
+
+追加用户
+$ ./apache2/bin/htpasswd repository/users shawnyan
+$ ./apache2/bin/htpasswd svnrepository/shawnyan_data/users sundy
+
+删除用户
+cd repository
+vim users
+
+sudo /data/subversion-1.8.16-0/ctlscript.sh restart apache
+
+

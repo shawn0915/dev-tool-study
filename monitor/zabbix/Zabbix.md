@@ -33,5 +33,5 @@ rhel7.2 + apache2.2 + php5.6 + mysql5.6.30 + zabbix3.0.1
 
 ## BookList
 
-[《Zabbix企业级分布式监控系统》](https://github.com/itnihao/zabbix-book)
+[《Zabbix企业级分布式监控系统》(zabbix-2.2.2)](https://github.com/itnihao/zabbix-book)
 
