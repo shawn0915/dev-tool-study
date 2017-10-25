@@ -166,6 +166,9 @@ curl -XDELETE 'http://elksrv.es:9200/filebeat-*'
 # Plugin
 
 - [~~elasticsearch-head~~](https://github.com/mobz/elasticsearch-head)
+```html
+http://es.shawnyan.com:9200/_plugin/head/
+```
 - [IK-Analyzer](http://code.csdn.net/openkb/p-IK%20Analyzer)
 
 ## REF

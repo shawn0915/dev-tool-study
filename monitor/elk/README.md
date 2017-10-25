@@ -1,6 +1,6 @@
 # Elastic Stack(ELK)
 
-[![Version](../../svg/ELK-5.5.1-brightgreen.svg)]()
+[![Version](../../svg/ELK-5.5.1-brightgreen.svg)](README.md)
 
 ## ENV
 
