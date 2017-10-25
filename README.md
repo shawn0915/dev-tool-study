@@ -27,8 +27,8 @@
 
 ### Efficiency
 
-- UltraEdit
-- Notepad++
+- [UltraEdit](http://www.ultraedit.com/)
+- [Notepad++](efficiency/npp/npp.md)
 - EditPlus
 - Evernote
 - note.youdao
@@ -39,7 +39,7 @@
 
 - ~~Concurrent Versions System (CVS)~~
 - [Apache Subversion](scm/svn/Subversion.md)
-- Git
+- [Git](scm/git/Git.md)
 
 ### Collaboration
 
