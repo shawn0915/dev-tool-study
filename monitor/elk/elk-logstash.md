@@ -23,17 +23,18 @@ output:
 }
 ```
 
-- "-f"
+- "-f config/config.path"
 
 ```bash
-./bin/logstash -f logstash-apache-beats.conf
-nohup ./bin/logstash -f logstash-apache-beats.conf &
+# ./bin/logstash -f logstash-apache-beats.conf
+# nohup ./bin/logstash -f logstash-apache-beats.conf &
+./bin/logstash -f conf.d.ls
 ```
 
 ## config examples
 
-- [logstash-apache](conf/logstash-apache.conf)
-- [logstash-apache-log](conf/logstash-apache-beats-v3.1.conf)
+- [conf.d.ls.v2](conf.d.ls.v2)
+
 
 
 ## grok
@@ -52,6 +53,7 @@ nohup ./bin/logstash -f logstash-apache-beats.conf &
 
 ### Grok
 
+- [grokdebugger-getting-started](https://www.elastic.co/guide/en/kibana/5.6/grokdebugger-getting-started.html)
 - [~~logstash-grok-patterns~~](https://github.com/elastic/logstash/blob/v1.4.2/patterns/grok-patterns)
 - [logstash-plugins-grok-patterns](https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/grok-patterns)
 - [grok-express](https://doc.yonyoucloud.com/doc/logstash-best-practice-cn/filter/grok.html)
