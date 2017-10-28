@@ -124,8 +124,12 @@ git tag tag-name commitId   #在commitId上打一个tag
 ## push
 
 ```bash
-git push          #将当前分支的更改推送到远程分支
-git push -tags    #将当前分支及所有新打的tag推送到远程服务器
+# 将当前分支的更改推送到远程分支
+git push
+# 将当前分支及所有新打的tag推送到远程服务器
+git push -tags
+# 删除远程分支，origin后面跟一个空格
+git push origin :branch_delete
 ```
 
 ## merge
