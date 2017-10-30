@@ -41,12 +41,16 @@
 1. MySQL Server Status
 1. MySQL Slow Log
 
+## Alerting
+
+- [ELK Alerting](elk-alerting.md)
+
 ## Summary
 
 1. ELK(x-pack/libbeats) Install/Config
 1. LogStash customer pattern/conf => 采集的日志格式需与LS的filter相匹配
 1. Kbn 可视化配置、面板配置
-
+1. ELK Alerting
 
 ## REF
 

@@ -3,13 +3,14 @@
 ## 系统监控指标
 
 - CPU
-- 内存
-- 磁盘
+- Memory
+- Disk
+- Network
 
 ## 应用监控指标
 
-- 健康度
-- 响应时间
+- Healthy 健康度
+- Response 响应时间
 - 关联ID
 - 业务相关
 
