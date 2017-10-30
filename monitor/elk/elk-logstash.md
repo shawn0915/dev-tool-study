@@ -39,7 +39,9 @@ output:
 ## grok
 
 - [grok-patterns-4.1.0](grok/grok-patterns)
+- [grok-patterns-customer](grok/grok-patterns-customer)
 
+多行log =>  "(?m)"
 
 ## REF
 

@@ -137,6 +137,10 @@ http://elksrv.es:9200/_cat/nodes?v
 /_cat/indices
 /_cat/indices/{index}
 ```
+查看索引状态
+```html
+/_cat/indices?v&pretty&s=store.size:desc,index:desc
+```
 
 - monitor
 ```bash
@@ -173,11 +177,12 @@ http://es.shawnyan.com:9200/_plugin/head/
 
 ## REF
 
-> common
+> es
 
 - [github-es](https://github.com/elastic/elasticsearch)
 - [elastic-es](https://www.elastic.co/products/elasticsearch)
 - [ref-es](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+- [cat](https://www.elastic.co/guide/en/elasticsearch/reference/current/cat.html)
 
 > other
 
