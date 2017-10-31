@@ -40,6 +40,7 @@ output:
 
 - [grok-patterns-4.1.0](grok/grok-patterns)
 - [grok-patterns-customer](grok/grok-patterns-customer)
+- [ex-grok-patterns-log](grok/ex-grok-patterns-log.md)
 
 多行log =>  "(?m)"
 
