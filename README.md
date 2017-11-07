@@ -22,6 +22,7 @@
 - [Monitor](#monitor)
   - [System Monitor](#systemmonitor)
   - [Application Monitor](#applicationmonitor)
+- [Alerting](#alerting)
 
 ## Management
 
@@ -126,3 +127,6 @@
 - [CAT](monitor/cat/CAT.md)
 - [Elastic Stack (ELK)](monitor/elk/README.md)
 
+## Alerting
+
+- [SendMail](alerting/SendMail.md)

@@ -44,6 +44,7 @@
 ## Alerting
 
 - [ELK Alerting](elk-alerting.md)
+- [ElastAlert](elastalert/ElastAlert.md)
 
 ## Summary
 
@@ -56,10 +57,16 @@
 
 - [elastic](https://www.elastic.co/)
 - [elastic-guide](https://www.elastic.co/guide/index.html)
-- [ELKstack 中文指南](https://www.gitbook.com/book/chenryn/elk-stack-guide-cn/details)
+- [elk-stack-guide-cn](https://www.gitbook.com/book/chenryn/elk-stack-guide-cn/details)
+- [elastic/examples](https://github.com/elastic/examples)
+- [sirensolutions/sentinl](https://github.com/sirensolutions/sentinl)
+- [ameizi/ELK](https://github.com/ameizi/ELK)
+
+### blog
+
 - [~~elk5.0安装配置~~](http://blog.csdn.net/qq942477618/article/details/53518372)
 - [ls-filebeat-nginx](http://tchuairen.blog.51cto.com/3848118/1840596/)
-- [ameizi/ELK](https://github.com/ameizi/ELK)
+- [kibana-dashboard](http://www.cnblogs.com/hanyifeng/p/5860731.html)
 
 ### docker-elk
 
