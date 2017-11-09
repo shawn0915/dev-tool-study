@@ -44,6 +44,20 @@ output:
 
 多行log =>  "(?m)"
 
+## plugin
+
+```bash
+bin/logstash-plugin list 
+bin/logstash-plugin list --verbose 
+bin/logstash-plugin list '*namefragment*' 
+bin/logstash-plugin list --group output
+```
+
+- Will list all installed plugins
+- Will list installed plugins with version information
+- Will list all installed plugins containing a namefragment
+- Will list all installed plugins for a particular group (input, filter, codec, output)
+
 ## REF
 
 - [How Logstash Works](https://www.elastic.co/guide/en/logstash/current/pipeline.html)

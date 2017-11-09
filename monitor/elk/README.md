@@ -46,6 +46,10 @@
 - [ELK Alerting](elk-alerting.md)
 - [ElastAlert](elastalert/ElastAlert.md)
 
+## GeoIP Filter
+
+- [GeoIP Filter](elk-ls-GeoIP.md)
+
 ## Summary
 
 1. ELK(x-pack/libbeats) Install/Config
@@ -75,7 +79,8 @@
 
 ## TODO
 
-1. 入口流量加密 -- kbn增加代理并配置ssl
-1. beats传输数据加密 -- 增加ssl
-1. 将LS的索引按服务、时间进行拆分
-1. 告警
+1.[ ] 入口流量加密 -- kbn增加代理并配置ssl
+1.[ ] beats传输数据加密 -- 增加ssl
+1.[x] 将LS的索引按服务、时间进行拆分
+1.[x] alerting => ElastAlert
+1.[x] geoip
