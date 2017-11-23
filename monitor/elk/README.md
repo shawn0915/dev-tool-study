@@ -57,7 +57,7 @@
 1. Kbn 可视化配置、面板配置
 1. ELK Alerting
 
-## REF
+## Reference
 
 - [elastic](https://www.elastic.co/)
 - [elastic-guide](https://www.elastic.co/guide/index.html)
@@ -66,11 +66,12 @@
 - [sirensolutions/sentinl](https://github.com/sirensolutions/sentinl)
 - [ameizi/ELK](https://github.com/ameizi/ELK)
 
-### blog
+### Social
 
 - [~~elk5.0安装配置~~](http://blog.csdn.net/qq942477618/article/details/53518372)
 - [ls-filebeat-nginx](http://tchuairen.blog.51cto.com/3848118/1840596/)
 - [kibana-dashboard](http://www.cnblogs.com/hanyifeng/p/5860731.html)
+- [ELK不权威指南](https://zhuanlan.zhihu.com/clouddevops/22400290)
 
 ### docker-elk
 
@@ -79,8 +80,9 @@
 
 ## TODO
 
-1.[ ] 入口流量加密 -- kbn增加代理并配置ssl
-1.[ ] beats传输数据加密 -- 增加ssl
-1.[x] 将LS的索引按服务、时间进行拆分
-1.[x] alerting => ElastAlert
-1.[x] geoip
+1. [ ] 入口流量加密 -- kbn增加代理并配置ssl
+1. [ ] beats传输数据加密 -- 增加ssl
+1. [x] 将LS的索引按服务、时间进行拆分
+1. [x] alerting => ElastAlert
+1. [x] geoip
+1. [ ] ELK集群配置
