@@ -23,6 +23,7 @@
   - [System Monitor](#systemmonitor)
   - [Application Monitor](#applicationmonitor)
 - [Alerting](#alerting)
+- [Reference](#reference)
 
 ## Management
 
@@ -130,3 +131,7 @@
 ## Alerting
 
 - [SendMail](alerting/SendMail.md)
+
+## Reference
+
+- [系统管理员资源大全中文](https://github.com/jobbole/awesome-sysadmin-cn)
