@@ -1,10 +1,20 @@
 # Monitor Index
 
-## 系统监控指标
+## System Monitor Items
 
 - CPU
+  - cpu use percent
 - Memory
+  - memory used
+  - use persent
+  - swap used
 - Disk
+  - I/O
+    - write/read count
+    - write/read bytes
+    - write/read time
+  - disk use percent
+  - inode use percent
 - Network
 
 ## 应用监控指标
